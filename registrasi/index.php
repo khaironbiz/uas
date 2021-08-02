@@ -1,4 +1,5 @@
 <?php
+$judul  = "Registrasi Anggota";
 include('../layout/header.php');
 ?>
 

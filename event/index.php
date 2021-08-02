@@ -1,4 +1,5 @@
 <?php
+$judul  = "Home";
 include('../layout/header.php');
 include('../layout/menu.php');
 ?>

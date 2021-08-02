@@ -1,4 +1,5 @@
 <?php
+$judul  = "Detail Anggota";
 include('../layout/header.php');
 include('../layout/menu.php');
 ?>

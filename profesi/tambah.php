@@ -1,4 +1,5 @@
 <?php
+$judul  = "Tambah Profesi";
 include("../layout/header.php");
 include("../layout/menu.php");
 ?>

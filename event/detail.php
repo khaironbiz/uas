@@ -1,4 +1,5 @@
 <?php
+$judul  = "Detail Acara";
 include('../layout/header.php');
 include('../layout/menu.php');
 ?>
@@ -14,7 +15,7 @@ include('../layout/menu.php');
             <div class="row">
                 <div class="col">
                     <div class="card h-100">
-                        <img src="../assets/img/webinar vaksin.jpg" class="card-img-top" alt="...">
+                        <img src="../assets/img/event/1.jpeg" class="card-img-top" alt="...">
                             <div class="card-header text-center">
                                 <span style="font-size: 0.7rem; color: Tomato;">
                                     <i class="bi bi-calendar-minus-fill"></i> 20-03-2021

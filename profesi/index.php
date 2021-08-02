@@ -1,4 +1,5 @@
 <?php
+$judul  = "Daftar Profesi Kesehatan";
 include("../layout/header.php");
 include("../layout/menu.php");
 ?>

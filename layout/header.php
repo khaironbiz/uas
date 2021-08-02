@@ -26,7 +26,7 @@ include("../auth/site.php");
 
 
 
-    <title>Event List</title>
+    <title><?= $judul; ?></title>
     <!-- JS Fon -->
     <script src="https://kit.fontawesome.com/238d77524d.js" crossorigin="anonymous"></script>
     

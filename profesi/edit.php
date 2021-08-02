@@ -1,4 +1,5 @@
 <?php
+$judul  = "Edit Profesi";
 include("../layout/header.php");
 include("../layout/menu.php");
 ?>
