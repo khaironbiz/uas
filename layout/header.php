@@ -1,6 +1,6 @@
 <?php
 include("../auth/koneksi.php");
-$site_url   = "http://localhost/ak";
+include("../auth/site.php");
 ?>
 
 <!doctype html>
@@ -17,22 +17,19 @@ $site_url   = "http://localhost/ak";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- akhir bootstrap CSS -->
     <!-- My CSS -->
-    <link rel="stylesheet" href="http://ppni.rspon.net/assets/css/style.css">
+    <link rel="stylesheet" href="<?= $site_url; ?>/assets/css/style.css">
     <!-- Akhir My CSS -->
     <!-- Icon Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <!-- Fontawesome -->
-    <link rel="stylesheet" href="http://ppni.rspon.net/assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="<?= $site_url; ?>/assets/css/fontawesome.min.css">
 
 
 
     <title>Event List</title>
     <!-- JS Fon -->
     <script src="https://kit.fontawesome.com/238d77524d.js" crossorigin="anonymous"></script>
-    <!-- CK editor -->
-    <script src="http://ppni.rspon.net/assets/ckeditor/ckeditor.js"></script>
-    <!-- data table -->
-
+    
     </head>
 
 <body>

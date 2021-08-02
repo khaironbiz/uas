@@ -1,4 +1,4 @@
-    var ajaxku;
+var ajaxku;
 function ajaxkota(id){
     ajaxku = buatajax();
     var url="ajax/select_kota.php";
