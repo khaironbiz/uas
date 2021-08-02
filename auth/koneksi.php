@@ -1,5 +1,8 @@
 <?php 
- $host = mysqli_connect("localhost", "root", "", "ak");
+//koneksi ke local
+$host = mysqli_connect("localhost", "root", "", "ak");
+//koneksi ke hosting
+//$host = mysqli_connect("localhost", "u853814933_uas", "Sql250909", "u853814933_uas");
 
  if($host){
   
