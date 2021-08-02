@@ -31,7 +31,7 @@ if ($rows == 1) {
 $_SESSION['login_user']=$nira['nira']; // Membuat Sesi/session
 $_SESSION['email']=$nira['email']; // Membuat Sesi/session
 
-header("location: ../event"); // Mengarahkan ke halaman profil
+header("location: $site_url/event"); // Mengarahkan ke halaman profil
 }
 
 if ($rows < 1) {
