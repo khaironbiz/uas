@@ -8,7 +8,11 @@
                 <div class="col-md-4">
                     <h5>Acara Kesehatan</h5>
                     <p>Pusat informasi kegiatan ilmiah seluruh profesi kesehatan di indonesia</p>
-
+                    <audio controls>
+                        
+                        <source src="<?= $site_url ?>/assets/audio/mars-ppni.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
                 </div>
                 <div class="col-md-4 sosial-media">
                     <h5>Sosial Media</h5>
