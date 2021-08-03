@@ -1,6 +1,5 @@
 <?php
-include('auth/site.php');
-?>
+include 'auth/site.php'; ?>
 <!doctype html>
 <html lang="en">
 
@@ -42,7 +41,7 @@ include('auth/site.php');
 					</div>
 					<div class="flex-sb-m w-full p-b-30">
 						<div>
-							<a href="<?= $site_url?>/registrasi/index.php" class="txt1">
+							<a href="<?= $site_url ?>/registrasi/index.php" class="txt1">
 								Registrasi
 							</a>
 						</div>
@@ -52,9 +51,7 @@ include('auth/site.php');
 							</a>
 						</div>
 					</div>
-
 					<div class="container-login100-form-btn">
-					    
 						<button class="login100-form-btn">
 							Login
 						</button>
@@ -68,3 +65,10 @@ include('auth/site.php');
 
 </body>
 </html>
+<!--
+	========================================TIM PENYUSUSN=======================================================
+	Nama	: Khairon
+	NIM		: 200401010072
+	Kelas	: IT-01
+	Prodi	: PJJ Informatika
+-->
