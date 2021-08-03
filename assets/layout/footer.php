@@ -9,9 +9,8 @@
                     <h5>Acara Kesehatan</h5>
                     <p>Pusat informasi kegiatan ilmiah seluruh profesi kesehatan di indonesia</p>
                     <audio controls>
-                        
                         <source src="<?= $site_url ?>/assets/audio/mars-ppni.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
+                        Audio MARS PPNI
                     </audio>
                 </div>
                 <div class="col-md-4 sosial-media">
