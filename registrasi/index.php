@@ -1,6 +1,6 @@
 <?php
-$judul  = "Registrasi Anggota";
-include('../layout/header.php');
+$judul = 'Registrasi Anggota';
+include '../layout/header.php';
 ?>
 
 <section id="event">
@@ -36,10 +36,21 @@ include('../layout/header.php');
                             <script type="text/javascript" src="ajax_kota.js"></script>
                             <select name="prop" id="prop" onchange="ajaxkota(this.value)" class="form-select" required>
                                 <option value="">--Pilih Provinsi--</option>
-                                <?php 
-                                $sql_prov =mysqli_query($host, "SELECT * FROM id_desa where lokasi_kabupatenkota=0 and lokasi_kecamatan=0 and lokasi_kelurahan=0 order by lokasi_nama");
-                                while ($dataProvinsi=mysqli_fetch_array($sql_prov)){
-                                    echo '<option value="'.$dataProvinsi['lokasi_propinsi'].'">'.$dataProvinsi['lokasi_nama'].'</option>';
+                                <?php
+                                $sql_prov = mysqli_query(
+                                    $host,
+                                    'SELECT * FROM id_desa where lokasi_kabupatenkota=0 and lokasi_kecamatan=0 and lokasi_kelurahan=0 order by lokasi_nama'
+                                );
+                                while (
+                                    $dataProvinsi = mysqli_fetch_array(
+                                        $sql_prov
+                                    )
+                                ) {
+                                    echo '<option value="' .
+                                        $dataProvinsi['lokasi_propinsi'] .
+                                        '">' .
+                                        $dataProvinsi['lokasi_nama'] .
+                                        '</option>';
                                 }
                                 ?>
                             </select>
@@ -85,7 +96,7 @@ include('../layout/header.php');
                             </div>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Sign in</button>
+                            <button type="submit" class="btn btn-primary">Daftar</button>
                         </div>
                     </form>
                 </div>
@@ -96,7 +107,6 @@ include('../layout/header.php');
 </section>
 
 
-<?php
-include('../layout/footer.php');
+<?php include '../layout/footer.php';
 
 ?>

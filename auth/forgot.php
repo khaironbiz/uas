@@ -39,12 +39,12 @@
 					<div class="flex-sb-m w-full p-b-30">
 						
                         <div>
-							<a href="/ak" class="txt1">
+							<a href="<?= $site_url ?>" class="txt1">
 								Login
 							</a>
 						</div>
                         <div>
-							<a href="registrasi.php" class="txt1">
+							<a href="<?= $site_url ?>/registrasi" class="txt1">
 								Registrasi
 							</a>
 						</div>
