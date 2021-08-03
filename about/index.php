@@ -1,7 +1,7 @@
 <?php
-$judul  = "About Us";
-include('../layout/header.php');
-include('../layout/menu.php');
+$judul = 'About Us';
+include '../layout/header.php';
+include '../layout/menu.php';
 ?>
 <section id="event">
     <div class="container">
@@ -13,13 +13,13 @@ include('../layout/menu.php');
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img src="<?= $site_url;?>/assets/img/slide/webinar vaksin.jpg" class="d-block w-100" alt="...">
+                <img src="<?= $site_url ?>/assets/img/slide/1.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                <img src="<?= $site_url;?>/assets/img/slide/2.jpeg" class="d-block w-100" alt="...">
+                <img src="<?= $site_url ?>/assets/img/slide/2.jpeg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                <img src="<?= $site_url;?>/assets/img/slide/3.jpeg" class="d-block w-100" alt="...">
+                <img src="<?= $site_url ?>/assets/img/slide/3.jpeg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -82,6 +82,5 @@ include('../layout/menu.php');
     </div>
     
 </section>
-<?php
-include('../layout/footer.php');
+<?php include '../layout/footer.php';
 ?>
