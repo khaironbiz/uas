@@ -1,24 +1,32 @@
 <?php
+$judul  = "Detail Video";
 include('../layout/header.php');
 include('../layout/menu.php');
+$has_video=$_GET['id'];
+$sql_video  = "SELECT * FROM video 
+            JOIN video_kategori on video.id_video_kategori=video_kategori.id_video_kategori
+            JOIN video_channel on video.id_video_channel=video_channel.id_video_channel
+            WHERE video.has_video='$has_video'";
+$query_video= mysqli_query($host,$sql_video);
+$data_vid   = mysqli_fetch_array($query_video);
 ?>
 <section id="event">
     <div class="container">
         <div class="row text-center text-white">
             <div class="col">
-                <h2>WEBINAR</h2>
-                <p>Webinar Tatalaksana Vaksinasi Covid-19 Bagi Perawat</p>
+                <h2><?= $data_vid['video_judul']?></h2>
+                
             </div>
         </div>
         <div class="row">
             <div class="row">
                 <div class="col">
                     <div class="card h-100 ">
-                        <iframe height="500" src="https://www.youtube.com/embed/9ed3b0tSRvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe height="500" src="<?= $data_vid['url_video']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <div class="card-body">
-                            <h6 class="card-title">Programmer Zaman Now</h6>
-                            <p class="card-text" style="font-size: 11px;">Belajar Rest API Full</p>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste illum ipsam perspiciatis ea hic doloribus ratione eaque impedit fugiat tempore nam facilis reiciendis quasi dolorem temporibus consequatur repellendus ipsa, animi, velit ab distinctio, explicabo voluptatibus molestiae nostrum. Inventore nihil error sequi, exercitationem odit deleniti quo laudantium porro dicta est similique quas debitis commodi possimus deserunt, ea excepturi amet impedit. Facilis necessitatibus temporibus animi corrupti, rem molestias aliquam optio ea odio sapiente quae ex, fugiat magnam minus nesciunt mollitia, in itaque? Aperiam assumenda perferendis officia eveniet nihil cum temporibus esse? Dolorum, amet? Eum eveniet vel distinctio tempore cumque consequatur magni, quae numquam sapiente? Quisquam ratione nihil nisi quod exercitationem, quo ab labore sapiente eaque, quas mollitia odit. Iure aut perspiciatis excepturi reprehenderit tempore repellendus quaerat illo aliquam odit delectus sequi facilis ipsum optio necessitatibus fuga laudantium autem quia, quasi ea molestiae ducimus. Explicabo in expedita veritatis et, unde consequatur nulla, facilis beatae officiis voluptatem repellendus adipisci corrupti temporibus incidunt sapiente quasi dignissimos at molestias laborum sit ratione. Neque hic impedit mollitia fugiat molestiae, cumque dolor ratione sequi sint recusandae ullam a qui illum odio eaque aliquid commodi incidunt iusto doloribus. Debitis accusantium nostrum iusto blanditiis tempore incidunt dolorum maiores ad earum cum reprehenderit provident explicabo, iure cumque nesciunt culpa fugiat temporibus? Quaerat in dolorum delectus debitis natus, eligendi temporibus impedit veritatis magni quidem dolore a nihil iste odit cupiditate deleniti fugit vel voluptatibus? Aut excepturi beatae possimus tempora dicta, rerum placeat illo maiores laudantium ipsum? Unde tempore illum perferendis explicabo cum ipsam! Quisquam, aut eos at ut recusandae ducimus id incidunt provident sit aspernatur commodi officia quasi praesentium, voluptate repudiandae impedit itaque illo qui optio similique vitae doloribus. Pariatur alias excepturi fugiat non aut animi ipsam, inventore porro qui doloremque hic accusamus sapiente exercitationem obcaecati soluta! Magni, suscipit, aliquam itaque necessitatibus iste quos sit qui perspiciatis nostrum nisi iure eligendi commodi nemo fuga odio quam maxime cupiditate molestias doloribus, eum quae minus adipisci error praesentium? Quos incidunt porro quam vero, similique quia debitis unde, fugiat, tenetur perferendis exercitationem doloremque aut eum sed? Voluptate atque reprehenderit, quas facere nisi tenetur magni cum cumque. Magnam nobis dignissimos sequi minima minus, iste hic modi molestias blanditiis, nisi magni dolorum quis velit labore deserunt quaerat ad ea ipsam repellendus aspernatur inventore saepe aperiam tempore laudantium? In quibusdam id, itaque unde odit, esse ad iste nobis temporibus, dolor veritatis commodi neque. Voluptates ea aperiam dolorem animi velit fugiat amet magnam iste soluta facere, iure non quis sint pariatur quod laboriosam nihil molestiae cum vitae numquam rerum provident. Sit doloremque laboriosam quibusdam, repellendus soluta nostrum, hic pariatur consequuntur, iure in autem necessitatibus non accusamus harum numquam impedit repellat. Cum dolorum ut minima quod quam reiciendis aliquid assumenda voluptate sunt, id, et itaque velit quaerat tempora reprehenderit officiis cumque dignissimos asperiores ullam beatae nobis sapiente. Odit sequi sapiente sit impedit blanditiis praesentium quisquam facilis officiis beatae veniam soluta, qui ipsum molestias dolor aliquam mollitia voluptatem nemo assumenda hic nam. Dolorem, recusandae at. Facere, distinctio harum. Soluta, labore vero?</p>
+                            <h6 class="card-title"><?= $data_vid['video_channel']?></h6>
+                            <p class="card-text" style="font-size: 11px;"><?= $data_vid['video_judul']?></p>
+                            <p><?= $data_vid['video_deskripsi']?></p>
                         </div>
                     </div>
                 </div>
