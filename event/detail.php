@@ -12,8 +12,7 @@ include '../layout/menu.php';
             </div>
         </div>
         <div class="row">
-            <div class="row">
-                <div class="col">
+            <div class="col">
                     <div class="card h-100">
                         <img src="<?= $site_url ?>/assets/img/event/1.jpeg" class="card-img-top" alt="...">
                             <div class="card-header text-center">
@@ -53,8 +52,7 @@ include '../layout/menu.php';
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+            </div>   
         </div>
     </div>
     

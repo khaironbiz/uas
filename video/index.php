@@ -1,4 +1,5 @@
 <?php
+$judul="Kumpulan Video";
 include('../layout/header.php');
 include('../layout/menu.php');
 ?>
@@ -16,7 +17,7 @@ include('../layout/menu.php');
                     <div class="card h-100">
                         <iframe src="https://www.youtube.com/embed/9ed3b0tSRvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <div class="card-body">
-                            <h6 class="card-title">Programmer Zaman Now</h6>
+                            <h6 class="card-title"><a href="detail.php">Programmer Zaman Now</a></h6>
                             <p class="card-text" style="font-size: 11px;">Belajar Rest API Full</p>
                         </div>
                     </div>
