@@ -40,6 +40,26 @@ $anggota        = mysqli_fetch_array($sql_anggota);
                             <li><a class="dropdown-item" href="<?= $site_url?>/video/channel.php">Channel</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Event
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="<?= $site_url?>/event">List</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/video/kategori.php">Kategori</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/video/channel.php">Channel</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Master
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="<?= $site_url?>/rs">Rumah Sakit</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/profesi">Profesi</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/kota">Kota</a></li>
+                        </ul>
+                    </li>
                     <?php
                         if($user_check !=""){
                         ?>

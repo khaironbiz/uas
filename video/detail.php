@@ -2,6 +2,7 @@
 $judul  = "Detail Video";
 include('../layout/header.php');
 include('../layout/menu.php');
+$time     = date('Y-m-d H:i:s');
 $has_video=$_GET['id'];
 $sql_video  = "SELECT * FROM video 
             JOIN video_kategori on video.id_video_kategori=video_kategori.id_video_kategori
@@ -9,6 +10,25 @@ $sql_video  = "SELECT * FROM video
             WHERE video.has_video='$has_video'";
 $query_video= mysqli_query($host,$sql_video);
 $data_vid   = mysqli_fetch_array($query_video);
+$id_video   = $data_vid['id_video'];
+$has_video_hit  = md5(uniqid());
+$sql_hit_history="INSERT INTO video_hit SET
+                    id_video        ='$id_video',
+                    date_hit        ='$time',
+                    id_perawat      ='$user_check',
+                    has_video_hit   ='$has_video_hit'";
+$insert_hit = mysqli_query($host,$sql_hit_history);
+if($insert_hit){
+    $hit_baru   = $data_vid['hit']+1;
+    if($hit_baru){
+        $sql_update = "UPDATE video SET 
+                        hit         ='$hit_baru',
+                        date_hit    = '$time'
+                        WHERE 
+                        has_video   ='$has_video'";
+        $update_data=mysqli_query($host,$sql_update);
+        }
+    }
 ?>
 <section id="event">
     <div class="container">
