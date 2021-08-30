@@ -1,4 +1,7 @@
 <footer>
+    <a href="https://api.whatsapp.com/send?phone=6281213798746" class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
     <div class="container-fluid">
         <div class="row text-center mb-5">
             <div class="col-md-4">

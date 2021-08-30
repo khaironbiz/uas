@@ -30,7 +30,7 @@ include("../auth/site.php");
     <title><?= $judul; ?></title>
     <!-- JS Fon -->
     <script src="https://kit.fontawesome.com/238d77524d.js" crossorigin="anonymous"></script>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/getting-started/introduction/">
+    <link rel="icon" href="<?= $site_url; ?>/assets/img/favicon.ico">
 
 
     </head>

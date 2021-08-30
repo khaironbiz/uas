@@ -46,8 +46,9 @@ $anggota        = mysqli_fetch_array($sql_anggota);
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="<?= $site_url?>/event">List</a></li>
-                            <li><a class="dropdown-item" href="<?= $site_url?>/video/kategori.php">Kategori</a></li>
-                            <li><a class="dropdown-item" href="<?= $site_url?>/video/channel.php">Channel</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/event/kategori.php">Kategori</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/event/penyedia.php">Penyedia</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/event/event.php">Event</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
