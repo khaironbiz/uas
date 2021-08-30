@@ -17,7 +17,7 @@ include('../layout/menu.php');
             </div>
         <div>
         <div class="row justify-content-center"> 
-            <div class="col-md-8">
+            <div class="col-md-12">
                 
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -38,19 +38,31 @@ include('../layout/menu.php');
                                     <div class="mb-3 row">
                                         <label class="col-sm-4 col-form-label">Nama Penyedia</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="video_channel">
+                                            <input type="text" class="form-control" name="event_penyedia">
                                         </div>
                                     </div>  
                                     <div class="mb-3 row">
                                         <label class="col-sm-4 col-form-label">Pemilik</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="pemilik_channel">
+                                            <input type="text" class="form-control" name="pemilik">
+                                        </div>
+                                    </div>  
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-4 col-form-label">Email</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" name="email">
+                                        </div>
+                                    </div>  
+                                    <div class="mb-3 row">
+                                        <label class="col-sm-4 col-form-label">HP</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" name="hp">
                                         </div>
                                     </div>    
                                     <div class="mb-3 row">
-                                        <label class="col-sm-4 col-form-label">URL Channel</label>
+                                        <label class="col-sm-4 col-form-label">Website</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="url_youtube">
+                                            <input type="text" class="form-control" name="web">
                                         </div>
                                     </div>    
                                     
@@ -60,32 +72,36 @@ include('../layout/menu.php');
                                 </div>
                             <form>
                                 <?php
-                                if(isset($_POST['video_channel'])){
-                                    $video_channel      = $_POST['video_channel'];
-                                    $pemilik_channel    = $_POST['pemilik_channel'];
-                                    $url_youtube        = $_POST['url_youtube'];
+                                if(isset($_POST['event_penyedia'])){
+                                    $event_penyedia     = $_POST['event_penyedia'];
+                                    $pemilik            = $_POST['pemilik'];
+                                    $hp                 = $_POST['hp'];
+                                    $email              = $_POST['email'];
+                                    $web                = $_POST['web'];
                                     $time               = date('Y-m-d H:i:s');
-                                    $has_video_channel  = md5(uniqid());
-                                    $sql_url            = "SELECT * FROM video_channel 
-                                                            WHERE url_youtube ='$url_youtube'";
+                                    $has_event_penyedia = md5(uniqid());
+                                    $sql_url            = "SELECT * FROM event_penyedia 
+                                                            WHERE email ='$email'";
                                     $validasi_url       = mysqli_query($host,$sql_url);
                                     $count_url          = mysqli_num_rows($validasi_url);
                                     if($count_url<1){
-                                        $sql_channel    = "INSERT INTO video_channel SET 
-                                                            video_channel       ='$video_channel',
-                                                            pemilik_channel     ='$pemilik_channel',
-                                                            url_youtube         ='$url_youtube',
+                                        $sql_channel    = "INSERT INTO event_penyedia SET 
+                                                            event_penyedia      ='$event_penyedia',
+                                                            pemilik             ='$pemilik',
+                                                            hp                  ='$hp',
+                                                            email               ='$email',
+                                                            web                 ='$web',
                                                             date_create         ='$time',
                                                             create_by           ='$user_check',
-                                                            has_video_channel   ='$has_video_channel'";
+                                                            has_event_penyedia  ='$has_event_penyedia'";
                                         $tambah_data    = mysqli_query($host,$sql_channel);
                                         if($tambah_data){
-                                        echo "<script>document.location=\"channel.php\"</script>";
+                                        echo "<script>document.location=\"penyedia.php\"</script>";
                                         }
                                     }else{
                                             echo "<script> alert(\"Data menambahkan data\");
                                             </script>";
-                                            echo "<script>document.location=\"channel.php\"</script>";
+                                            echo "<script>document.location=\"penyedia.php\"</script>";
                                         }
                                 }
                                 ?>
@@ -97,9 +113,12 @@ include('../layout/menu.php');
                         <thead class="thead-dark">
                             <tr>
                                 <th>No</th>
-                                <th>Nama Channel</th>
-                                <th>Pemilik Channel</th>
-                                <th>URL</th>
+                                <th>Nama Penyedia</th>
+                                <th>Pemilik</th>
+                                <th>Email</th>
+                                <th>HP</th>
+                                <th>Web</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -111,21 +130,24 @@ include('../layout/menu.php');
                             $previous = $halaman - 1;
                             $next = $halaman + 1;
                             
-                            $data = mysqli_query($host,"SELECT * FROM video_channel ORDER BY video_channel");
+                            $data = mysqli_query($host,"SELECT * FROM event_penyedia");
                             $jumlah_data = mysqli_num_rows($data);
                             $total_halaman = ceil($jumlah_data / $batas);
             
-                            $data_channel = mysqli_query($host,"SELECT * FROM video_channel  ORDER BY video_channel limit $halaman_awal, $batas");
+                            $data_channel = mysqli_query($host,"SELECT * FROM event_penyedia  ORDER BY event_penyedia limit $halaman_awal, $batas");
                             $nomor = $halaman_awal+1;
                             while($d = mysqli_fetch_array($data_channel)){
                                 ?>
                                 <tr>
                                     <td><?php echo $nomor++; ?></td>
-                                    <td><?= $d['video_channel']; ?></td>
-                                    <td><?= $d['pemilik_channel']; ?></td>
+                                    <td><?= $d['event_penyedia']; ?></td>
+                                    <td><?= $d['pemilik']; ?></td>
+                                    <td><?= $d['hp']; ?></td>
+                                    <td><?= $d['email']; ?></td>
+                                    <td><?= $d['web']; ?></td>
                                     <td>
                                         <a class="btn btn-success btn-sm" href="channel-detail.php?id=<?= $d['has_video_channel']?>" role="button">Detail</a>
-                                        <a class="btn btn-warning btn-sm" href="<?= $d['url_youtube']; ?>" role="button" target=_blank>View</a>
+                                        
                                     </td>
                                 </tr>
                                 <?php

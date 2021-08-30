@@ -23,12 +23,6 @@ $anggota        = mysqli_fetch_array($sql_anggota);
                     <li class="nav-item">
                         <a class="nav-link text-white" aria-current="page" href="<?= $site_url?>/about">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="<?= $site_url?>/profesi">Profesi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="<?= $site_url?>/anggota">Anggota</a>
-                    </li>
                     
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,7 +52,7 @@ $anggota        = mysqli_fetch_array($sql_anggota);
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="<?= $site_url?>/rs">Rumah Sakit</a></li>
                             <li><a class="dropdown-item" href="<?= $site_url?>/profesi">Profesi</a></li>
-                            <li><a class="dropdown-item" href="<?= $site_url?>/kota">Kota</a></li>
+                            <li><a class="dropdown-item" href="<?= $site_url?>/anggota">Anggota</a></li>
                         </ul>
                     </li>
                     <?php
